@@ -3,8 +3,8 @@
 public partial class Responsive : IAsyncDisposable
 {
     #region Members
-    private Breakpoint _breakpoint = Breakpoint.Small;
     private readonly IJSRuntime _jsRuntime;
+    private Breakpoint _breakpoint = Breakpoint.Small;    
     private IJSObjectReference _responsiveModule = default!;
     #endregion
 
