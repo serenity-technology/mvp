@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Share.UI\Share.UI.csproj" />
     <ProjectReference Include="..\Share.UI.Examples.Client\Share.UI.Examples.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.0-rc.1.24452.1" />
   </ItemGroup>
