@@ -7,17 +7,17 @@
 }
 
 .scrollbar-dark::-webkit-scrollbar-track {
-    background: #1b2f46; /* color of the tracking area */
+    background: #262626; /* color of the tracking area */
 }
 
 .scrollbar-dark::-webkit-scrollbar-corner {
-    background-color: #1b2f46;
+    background-color: #262626;
 }
 
 .scrollbar-dark::-webkit-scrollbar-thumb {
-    background-color: #374151; /* color of the scroll thumb */
+    background-color: #52525b; /* color of the scroll thumb */
     border-radius: 20px; /* roundness of the scroll thumb */
-    border: 3px solid #1b2f46; /* creates padding around scroll thumb */
+    border: 3px solid #262626; /* creates padding around scroll thumb */
 }
 
 .scrollbar-light::-webkit-scrollbar {
