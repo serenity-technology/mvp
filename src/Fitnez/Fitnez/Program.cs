@@ -1,12 +1,28 @@
-using Fitnez.Client.Pages;
+using DbUp;
 using Fitnez.Components;
 using Fitnez.Components.Account;
 using Fitnez.Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Database Upgrading
+//var upgrader = DeployChanges.To
+//    .PostgresqlDatabase(builder.Configuration["ConnectionStrings:DefaultConnection"])
+//    .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
+//    .LogToAutodetectedLog()
+//    .LogScriptOutput()
+//    .JournalToPostgresqlTable("public", "schema_versions")
+//    .Build();
+
+//var result = upgrader.PerformUpgrade();
+//if (result.Successful)
+//    Log.Information("DbUp Success!");
+//else
+//    Log.Error(result.Error, "DbUp Error {message}", result.Error.Message);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -53,7 +69,6 @@ else
 }
 
 app.UseHttpsRedirection();
-
 
 app.UseAntiforgery();
 
