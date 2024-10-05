@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Share\Share.UI\Share.UI.csproj" />
     <ProjectReference Include="..\Fitnez.Client\Fitnez.Client.csproj" />
+    <ProjectReference Include="..\Share.UI\Share.UI.csproj" />
     <PackageReference Include="dbup-postgresql" Version="5.0.40" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.0-rc.1.24452.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.0-rc.1.24452.1" />
