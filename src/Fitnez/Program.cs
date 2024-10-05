@@ -1,28 +1,13 @@
-using DbUp;
 using Fitnez.Components;
 using Fitnez.Components.Account;
 using Fitnez.Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Database Upgrading
-//var upgrader = DeployChanges.To
-//    .PostgresqlDatabase(builder.Configuration["ConnectionStrings:DefaultConnection"])
-//    .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
-//    .LogToAutodetectedLog()
-//    .LogScriptOutput()
-//    .JournalToPostgresqlTable("public", "schema_versions")
-//    .Build();
-
-//var result = upgrader.PerformUpgrade();
-//if (result.Successful)
-//    Log.Information("DbUp Success!");
-//else
-//    Log.Error(result.Error, "DbUp Error {message}", result.Error.Message);
+builder.Services.AddOpenApi();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -47,6 +32,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager()
     .AddDefaultTokenProviders();
@@ -60,6 +46,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
     app.UseMigrationsEndPoint();
+
+    app.MapOpenApi();
+
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/openapi/v1.json", "v1");
+    });
 }
 else
 {
@@ -80,5 +73,7 @@ app.MapRazorComponents<App>()
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
+
+
 
 app.Run();

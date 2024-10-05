@@ -8,23 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="API\**" />
-    <Content Remove="API\**" />
-    <EmbeddedResource Remove="API\**" />
-    <None Remove="API\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Fitnez.Client\Fitnez.Client.csproj" />
     <ProjectReference Include="..\Share.UI\Share.UI.csproj" />
     <PackageReference Include="dbup-postgresql" Version="5.0.40" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.0-rc.1.24452.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.0-rc.1.24452.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.0-rc.1.24452.1" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0-rc.1.24452.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0-rc.1.24451.1" />
     <PackageReference Include="Npgsql" Version="8.0.4" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0-rc.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.8.1" />
     <PackageReference Include="System.Text.Json" Version="9.0.0-rc.1.24431.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="API\" />
   </ItemGroup>
 
 </Project>

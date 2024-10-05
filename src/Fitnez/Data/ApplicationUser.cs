@@ -6,5 +6,4 @@ namespace Fitnez.Data
     public class ApplicationUser : IdentityUser
     {
     }
-
 }
