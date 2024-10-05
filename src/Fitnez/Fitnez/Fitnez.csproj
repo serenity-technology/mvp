@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="API\**" />
+    <Content Remove="API\**" />
+    <EmbeddedResource Remove="API\**" />
+    <None Remove="API\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Share\Share.UI\Share.UI.csproj" />
     <ProjectReference Include="..\Fitnez.Client\Fitnez.Client.csproj" />
     <PackageReference Include="dbup-postgresql" Version="5.0.40" />
@@ -18,12 +25,6 @@
     <PackageReference Include="Npgsql" Version="8.0.4" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0-rc.1" />
     <PackageReference Include="System.Text.Json" Version="9.0.0-rc.1.24431.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="API\Client\" />
-    <Folder Include="API\Exercise\" />
-    <Folder Include="API\Trainer\" />
   </ItemGroup>
 
 </Project>
